@@ -1,0 +1,33 @@
+{
+  "name": "modulize-generic-js",
+  "version": "0.0.4",
+  "author": {
+    "name": "Matthias Behrens",
+    "email": "matthias.behrens@gmail.com"
+  },
+  "description": "convert generic javascript into amd and commonJs loadable modules",
+  "main": "./lib/modulize.js",
+  "keywords": [
+    "modulize",
+    "convert",
+    "AMD",
+    "amd",
+    "commonJs",
+    "modules",
+    "generic",
+    "JavaScript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soliton4/modulize-generic-js"
+  },
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/soliton4/modulize-generic-js/issues"
+  },
+  "readme": "## Description\n\nTurn your generic JavaScript files into loadable modules.  \n\n## Usage\n\n\n`\nvar modulizer = require(\"modulize-generic-js\");\nvar someSourceCodeStr = \"var x = 'something'\";\nconsole.log( modulizer.convertCode(someSourceCodeStr, { \"return\": \"x\" }) );\n\nvar sourceFileName = \"/somejs.js\"\nvar destFileName = \"/modules/some/somejs.js\"\n\nmodulizer.convertFile(sourceFileName, {\n  require: [{\n    module: \"/othermodule/main\"\n    , as: \"otherVariable\"\n  }, \"/othermodule/justload-dontrefer\"]\n  , \"return\": \"moduleVariable\"\n}, destFileName, function(err, data){});\n`\n\nthe result will contain a header that is supposed to autodetect weather it is being loaded as AMD by the presence of a define function or as a commonJs module.\n\n## License\n\nBSD\n",
+  "homepage": "https://github.com/soliton4/modulize-generic-js",
+  "_id": "modulize-generic-js@0.0.3",
+  "_from": "modulize-generic-js@"
+}
